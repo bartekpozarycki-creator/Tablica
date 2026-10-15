@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" fill="none">
+  <defs>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+  </defs>
+  <g filter="url(#soft)">
+    <circle cx="70" cy="40" r="280" fill="#f4c7ae"/>
+    <circle cx="1540" cy="10" r="250" fill="#f6c9a4"/>
+    <ellipse cx="210" cy="1040" rx="520" ry="300" fill="#e8b08a"/>
+    <ellipse cx="640" cy="1100" rx="620" ry="320" fill="#c9d3bc"/>
+    <ellipse cx="1040" cy="1140" rx="420" ry="220" fill="#f3d4bb"/>
+    <ellipse cx="1380" cy="1060" rx="560" ry="310" fill="#c3cbb4"/>
+    <ellipse cx="1680" cy="1000" rx="360" ry="240" fill="#efc2a2"/>
+  </g>
+</svg>

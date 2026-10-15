@@ -1,0 +1,41 @@
+{
+  "name": "mattablica",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -n web,sync -c green,blue \"vite\" \"node server/index.mjs\"",
+    "server": "node server/index.mjs",
+    "build": "tsc -b && vite build",
+    "lint": "oxlint",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.117.3",
+    "framer-motion": "^14.2.0",
+    "jspdf": "^4.2.1",
+    "katex": "^0.19.0",
+    "lucide-react": "^1.57.0",
+    "pdfjs-dist": "^6.4.299",
+    "perfect-freehand": "^1.2.3",
+    "pixi.js": "^8.22.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "y-indexeddb": "^9.0.12",
+    "y-websocket": "^3.1.0",
+    "yjs": "^13.6.33"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@vitejs/plugin-react": "^6.1.1",
+    "concurrently": "^10.0.6",
+    "oxlint": "^1.81.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "~6.0.2",
+    "vite": "^8.3.0",
+    "ws": "^8.22.0"
+  }
+}

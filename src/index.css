@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+:root,
+[data-theme='sand'] {
+  color-scheme: light;
+  --bg: #f9eddd;
+  --panel: rgba(255, 251, 245, 0.94);
+  --panel-solid: #fffdf8;
+  --ink: #1c1917;
+  --muted: #6d645b;
+  --line: rgba(28, 25, 23, 0.1);
+  --accent: #1f6b45;
+  --accent-ink: #ffffff;
+  --accent-2: #e7f3ec;
+  --danger: #9d2c2c;
+  --shadow: 0 16px 50px rgba(72, 48, 20, 0.14);
+}
+
+[data-theme='ink'] {
+  color-scheme: dark;
+  --bg: #121212;
+  --panel: rgba(28, 28, 28, 0.94);
+  --panel-solid: #1c1c1c;
+  --ink: #f6f1e8;
+  --muted: #b7aa9c;
+  --line: rgba(246, 241, 232, 0.12);
+  --accent: #7dcea0;
+  --accent-ink: #102117;
+  --accent-2: #1d3a2c;
+  --danger: #ffb4b4;
+  --shadow: 0 16px 50px rgba(0, 0, 0, 0.45);
+}
+
+[data-theme='forest'] {
+  color-scheme: dark;
+  --bg: #143026;
+  --panel: rgba(22, 54, 42, 0.94);
+  --panel-solid: #1b3d30;
+  --ink: #f6f1e8;
+  --muted: #d5c7b2;
+  --line: rgba(246, 241, 232, 0.14);
+  --accent: #d8f3dc;
+  --accent-ink: #143026;
+  --accent-2: #24543d;
+  --danger: #ffb4b4;
+  --shadow: 0 16px 50px rgba(0, 0, 0, 0.28);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+  font-family: Outfit, ui-sans-serif, system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.shell {
+  background-color: var(--bg);
+}
+
+html:not([data-theme='ink']):not([data-theme='forest']) .shell {
+  background-color: #f7f0e4;
+  background-image: url('/bg/dekor.svg');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.field {
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: transparent;
+  padding: 0.7rem 0.85rem;
+  outline: none;
+}
+
+.board-host {
+  touch-action: none;
+}
+
+dialog {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  max-width: none;
+  max-height: none;
+}
+
+.tip {
+  position: relative;
+}
+
+.dock .tip:hover::after,
+.dock .tip:focus-visible::after,
+.tip:hover::after,
+.tip:focus-visible::after {
+  content: attr(data-tip);
+  position: absolute;
+  left: calc(100% + 10px);
+  top: 50%;
+  z-index: 60;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--bg);
+  padding: 0.3rem 0.6rem;
+  font-size: 12px;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .dock .tip:hover::after,
+  .dock .tip:focus-visible::after {
+    left: 50%;
+    top: auto;
+    bottom: calc(100% + 8px);
+    transform: translateX(-50%);
+  }
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 35%, white);
+}
